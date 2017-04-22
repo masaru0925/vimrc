@@ -2,10 +2,9 @@
 "set softtabstop=4
 "set shiftwidth=4
 
-
 "dein Scripts-----------------------------
 if &compatible
-  set nocompatible               " Be iMproved
+  set nocompatible               " Be improved
 endif
 "------------------------------
 filetype on
@@ -117,6 +116,7 @@ let g:python_hilight_all = 1
 set runtimepath+=/root/neovim/repos/github.com/Shougo/dein.vim
 
 " Required:
+"call dein#clear_state()
 if dein#load_state('/root/neovim')
   call dein#begin('/root/neovim')
 
@@ -161,18 +161,21 @@ if dein#load_state('/root/neovim')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('Shougo/Unite.vim')
   call dein#add('Shougo/unite-outline')
+  call dein#add('Shougo/vimfiler')
+        let g:vimfiler_as_default_explorer = 1
   " You can specify revision/branch/tag.
-  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+  call dein#add('Shougo/vimproc', {'build': 'make'})
+  call dein#add('Shougo/vimshell')
   call dein#add('sjl/badwolf')
   call dein#add('tomasr/molokai')
 
   set background=dark
   "colorscheme antares
-  colorscheme apprentice
+  "colorscheme apprentice
   "colorscheme badwolf
   "colorscheme molokai
   "colorscheme solarized
-  "colorscheme tender
+  colorscheme tender
   "colorscheme kalisi
   highlight Normal ctermbg=none
 
